@@ -1,9 +1,9 @@
-# Welcome to shrinkat 👋
+# Welcome to shrinkat 😼
 
 ![Version](https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000)
 [![Twitter: psypher1](https://img.shields.io/twitter/follow/psypher1.svg?style=social)](https://twitter.com/psypher1)
 
-> a link shortener app
+> A link shortener app built with SvelteKit and Pocketbase
 
 ### 🏠 [Homepage](https:)
 
