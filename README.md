@@ -1,4 +1,4 @@
- <h1 style="text-align: center;"> Welcome to shrinkat <img src='/meerkat.png' width='50px' height='auto' /> </h1>
+ <h1 style="text-align: center;"> Welcome to shrinkat <img src="/meerkat.png" width="40" height="auto" /> </h1>
 
 ![Version](https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000)
 [![Twitter: psypher1](https://img.shields.io/twitter/follow/psypher1.svg?style=social)](https://twitter.com/psypher1)
