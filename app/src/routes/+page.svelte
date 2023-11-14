@@ -10,7 +10,11 @@
 
 <section>
 	<h1 class="text-4xl">shrinkat</h1>
-	<p>This meerkat will make sure those URLs are as short as possible</p>
+	<p class="break-words">This meerkat will make sure those URLs are as short as possible</p>
+
+	<div>
+		<img src="/images/meerkat.png" alt="" class="w-48" />
+	</div>
 </section>
 <!-- <Modal title="Login" buttonText="Login">
 	<svelte:fragment slot="body">inner content</svelte:fragment>

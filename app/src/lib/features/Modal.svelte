@@ -1,11 +1,13 @@
 <script>
 	import { createEventDispatcher } from "svelte";
 	import { scale, slide } from "svelte/transition";
+	import Button from "../ui/Button.svelte";
 	const dispatch = createEventDispatcher();
 
 	export let open = false;
 	export let title;
 	export let buttonText;
+	export let classes;
 
 	function clickOutside(element) {
 		function handleClick(event) {
@@ -37,7 +39,7 @@
 
 <button
 	on:click={openModal}
-	class="py-2 px-5 bg-amber-700 rounded text-blue-50 hover:bg-amber-600 transition duration-300"
+	class={`py-2 px-5 bg-brand1/80 rounded text-blue-50 hover:bg-brand1 transition duration-300 ${classes}`}
 	>{buttonText}</button
 >
 {#if open}
