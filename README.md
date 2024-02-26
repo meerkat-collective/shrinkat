@@ -21,6 +21,10 @@ pnpm install
 pnpm dev
 ```
 
+## Environment
+
+- Make sure you a `.env` file with the information in `.env.example`
+
 ## Author
 
 👤 **Dante**
