@@ -18,7 +18,7 @@
 		{placeholder}
 		{disabled}
 		{...$$restProps}
-		class={`mt-1 w-full block p-2 text-slate-900 border border-slate-400 placeholder:text-slate-400 outline-none focus:outline-slate-400 ${
+		class={`mt-1 w-full rounded bg-slate-800 block p-2  border border-slate-400 placeholder:text-slate-400 outline-none ${
 			disabled ? "bg-slate-400 font-medium" : ""
 		}`}
 	/>
