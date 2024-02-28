@@ -8,16 +8,18 @@
 	<header class=" flex items-center justify-between py-2 border-b border-slate-700">
 		<a href="/" class="text-2xl font-bold">shrinkat</a>
 		{#if !data.user}
-			<a href="/auth/login">Login</a>
-			<a href="/auth/login">Login</a>
+			<div class="flex">
+				<a href="/auth/login">Login</a>
+				<a href="/auth/register">Register</a>
+			</div>
 		{:else}
-			<form action="/logout" method="post">
-				<button class="py-1 px-5 block w-full hover:bg-kat-400">Logout</button>
+			<form action="/auth/logout" method="post">
+				<button type="submit" class="py-1 px-5 block w-full hover:bg-kat-400">Logout</button>
 			</form>
 		{/if}
 	</header>
 
-	<main>
+	<main class="py-20">
 		<slot />
 	</main>
 </div>
