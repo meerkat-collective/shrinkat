@@ -1,9 +1,19 @@
 import { nanoid } from "nanoid";
-import { error } from "@sveltejs/kit";
+import { error, redirect } from "@sveltejs/kit";
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load() {
-	return {};
+export async function load({ locals }) {
+	if (!locals.user) {
+		redirect(303, "/auth/login");
+	}
+	const top10Links = await locals.pb.collection("links").getFullList(10, {
+		sort: "-clicks",
+		filter: `createdBy="${locals.user?.id}"`
+	});
+
+	return {
+		top10Links: structuredClone(top10Links)
+	};
 }
 
 export const actions = {
