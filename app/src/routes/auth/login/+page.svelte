@@ -5,6 +5,8 @@
 	import Button from "$ui/Button.svelte";
 </script>
 
+<h1 class="text-xl text-center font-semibold">Login</h1>
+
 <form action="?/login" method="POST">
 	<Input label="email" name="email" type="email" placeholder="Email" required />
 	<Input label="password" name="password" type="password" placeholder="Password" required />
