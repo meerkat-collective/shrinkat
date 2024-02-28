@@ -2,4 +2,6 @@
 	// export let data;
 </script>
 
-<slot />
+<section class="max-w-xl mx-auto p-8">
+	<slot />
+</section>
