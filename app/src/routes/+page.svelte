@@ -30,9 +30,12 @@
 <section class="">
 	<h1 class="text-4xl text-center font-bold">shrinkat</h1>
 
-	<div class=" grid place-items-center my-16">
-		<img src="/images/meerkat.png" alt="" class="w-20" />
-		<p>This is <spann class="italic text-kat-100">shrinky</spann>, he likes making things tiny.</p>
+	<div class=" grid place-items-center my-12">
+		<img src="/images/meerkat.png" alt="" class="w-24" />
+		<p class="text-lg">
+			This is <spann class="italic text-kat-100">shrinky</spann>, he likes making things tiny. Give
+			him a link and see...
+		</p>
 	</div>
 
 	<form action="?/shrink" method="post" class="max-w-lg mx-auto">
