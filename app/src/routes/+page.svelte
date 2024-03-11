@@ -1,6 +1,5 @@
 <script>
 	export let form, data;
-	console.log(data);
 
 	const { top10Links } = data;
 
