@@ -38,6 +38,6 @@ export const actions = {
 			throw error(500, "It all went tits up...");
 		}
 
-		throw redirect(303, "/");
+		throw redirect(303, "/my-links");
 	}
 };
