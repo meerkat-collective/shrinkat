@@ -1,5 +1,5 @@
 <script>
-	export let form, data;
+	export let data;
 
 	const { topLinks } = data;
 
