@@ -1,7 +1,7 @@
 <script>
 	export let form, data;
 
-	const { top10Links } = data;
+	const { topLinks } = data;
 
 	import Input from "$ui/Input.svelte";
 	import Button from "$ui/Button.svelte";
@@ -29,15 +29,15 @@
 <section class="">
 	<h1 class="text-4xl text-center font-bold">shrinkat</h1>
 
-	<div class=" grid place-items-center my-12">
+	<div class=" grid place-items-center mt-12">
 		<img src="/images/meerkat.png" alt="" class="w-24" />
-		<p class="text-lg">
+		<p class="text-xl">
 			This is <spann class="italic text-kat-100">shrinky</spann>, he likes making things tiny. Give
 			him a link and see...
 		</p>
 	</div>
 
-	<form action="?/shrink" method="post" class="max-w-lg mx-auto">
+	<!-- <form action="?/shrink" method="post" class="max-w-lg mx-auto">
 		<Input
 			type="url"
 			name="url"
@@ -60,11 +60,21 @@
 				{/if}
 			</button>
 		{/if}
-	</form>
+	</form> -->
 </section>
 
-<section class="mt-12">
-	<h2 class="text-center text-xl font-medium capitalize">your links</h2>
+<section class="mt-5">
+	{#if !data.user}
+		<a
+			href="/auth/login"
+			class="py-2 w-fit px-10 mx-auto text-lg font-semibold bg-kat-400 block rounded text-slate-200 hover:bg-kat-300 transition duration-300"
+			>Login</a
+		>
+	{/if}
+</section>
+
+<section class="mt-14">
+	<h2 class="text-center text-xl font-medium capitalize">Shrinky's Top Links</h2>
 	<div class="max-w-2xl mx-auto mt-3">
 		<table class="table-auto w-full">
 			<thead class="bg-slate-800">
@@ -76,7 +86,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				{#each top10Links as link, i}
+				{#each topLinks as link, i}
 					<tr>
 						<td class="p-2 border-b border-slate-700">{i + 1}</td>
 						<td class="p-2 border-b border-slate-700">{link.url}</td>

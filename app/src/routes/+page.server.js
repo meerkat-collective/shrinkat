@@ -1,18 +1,16 @@
 import { nanoid } from "nanoid";
 import { error, redirect } from "@sveltejs/kit";
 
-/** @type {import('./$types').PageServerLoad} */
+import { BASE_URL } from "$env/static/private";
+
 export async function load({ locals }) {
-	if (!locals.user) {
-		redirect(303, "/auth/login");
-	}
-	const top10Links = await locals.pb.collection("links").getFullList(10, {
-		sort: "-clicks",
-		filter: `createdBy="${locals.user?.id}"`
+	// ? How to get the first 3 links sorted by clicks
+	const topLinks = await locals.pb.collection("links").getFullList(3, {
+		sort: "-clicks"
 	});
 
 	return {
-		top10Links: structuredClone(top10Links)
+		topLinks: structuredClone(topLinks)
 	};
 }
 
@@ -25,9 +23,11 @@ export const actions = {
 			const shrinked = await nanoid(6);
 
 			await locals.pb.collection("links").create({ url, shrinked, createdBy: locals.user.id });
+			const shrinkedLink = `${BASE_URL}/${shrinked}`; // this is fine, I needed to test something
 
 			return {
-				shrinkedLink: `http://localhost:5173/${shrinked}`,
+				shrinkedLink: `${BASE_URL}/${shrinked}`,
+
 				url
 			};
 		} catch (e) {
