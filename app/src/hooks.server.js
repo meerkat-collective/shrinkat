@@ -1,6 +1,7 @@
 import pb from "$lib/poecketbase";
 
 // hooks run on every request to the applicating
+
 export async function handle({ event, resolve }) {
 	// grab cookie from browser
 	pb.authStore.loadFromCookie(event.request.headers.get("cookie") || "");

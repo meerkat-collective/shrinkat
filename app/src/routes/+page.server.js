@@ -9,8 +9,16 @@ export async function load({ locals }) {
 		sort: "-clicks"
 	});
 
+	console.log(topLinks);
+
+	const res = await locals.pb.collection("links").getList(1, 3, {
+		sort: "-clicks",
+		skipTotal: true // optional if you don't need the total* count fields
+	});
+	console.log(res.items);
+
 	return {
-		topLinks: structuredClone(topLinks)
+		topLinks: structuredClone(res.items)
 	};
 }
 
